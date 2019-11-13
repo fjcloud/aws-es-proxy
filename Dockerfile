@@ -23,4 +23,3 @@ COPY --from=0 /go/src/github.com/abutaha/aws-es-proxy/aws-es-proxy /usr/local/bi
 EXPOSE 9200
 
 ENTRYPOINT ["aws-es-proxy"] 
-CMD ["-endpoint ${AWS_ES_ENDPOINT}"]
