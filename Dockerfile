@@ -17,9 +17,11 @@ FROM alpine:3.7
 LABEL name="aws-es-proxy" \
       version="latest"
 
-RUN apk --no-cache add ca-certificates
 WORKDIR /home/
 COPY --from=0 /go/src/github.com/abutaha/aws-es-proxy/aws-es-proxy /usr/local/bin/
+COPY run.sh .
+RUN apk --no-cache add ca-certificates && chmod +x /home/run.sh
+
 EXPOSE 9200
 
-ENTRYPOINT ["aws-es-proxy"] 
+ENTRYPOINT ["run.sh"]
