@@ -1,1 +1,1 @@
-aws-es-proxy -enpoint ${AWS_ES_ENDPOINT}
+aws-es-proxy -endpoint ${AWS_ES_ENDPOINT}
