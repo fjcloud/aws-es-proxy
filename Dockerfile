@@ -24,4 +24,4 @@ RUN apk --no-cache add ca-certificates && chmod +x /home/run.sh
 
 EXPOSE 9200
 
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["/home/run.sh"]
