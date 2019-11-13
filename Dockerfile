@@ -21,9 +21,6 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /home/
 COPY --from=0 /go/src/aws-es-proxy /usr/local/bin/
 
-ENV AWS_ES_ENDPOINT
-ENV AWS_ACCESS_KEY_ID
-ENV AWS_SECRET_ACCESS_KEY
 EXPOSE 9200
 
 ENTRYPOINT ["aws-es-proxy"] 
