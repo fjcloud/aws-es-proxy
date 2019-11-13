@@ -1,3 +1,3 @@
 #!/bin/sh
 set -e
-aws-es-proxy -endpoint ${AWS_ES_ENDPOINT}
+aws-es-proxy -listen :9200 -endpoint ${AWS_ES_ENDPOINT}
