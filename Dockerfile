@@ -1,6 +1,6 @@
 FROM golang:1.9-alpine
 
-WORKDIR /go/src/
+WORKDIR /go/src/github.com/abutaha/aws-es-proxy
 COPY . .
 
 RUN apk add --update bash curl git && \
@@ -19,8 +19,7 @@ LABEL name="aws-es-proxy" \
 
 RUN apk --no-cache add ca-certificates
 WORKDIR /home/
-COPY --from=0 /go/src/aws-es-proxy /usr/local/bin/
-
+COPY --from=0 /go/src/github.com/abutaha/aws-es-proxy/aws-es-proxy /usr/local/bin/
 EXPOSE 9200
 
 ENTRYPOINT ["aws-es-proxy"] 
